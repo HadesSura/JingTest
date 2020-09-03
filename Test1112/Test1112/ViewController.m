@@ -355,7 +355,7 @@
     }];
     
     //循环播放
-//    [_lottieView setLoopAnimation:YES];
+    [_lottieView setLoopAnimation:YES];
 
 }
 
