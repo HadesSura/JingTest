@@ -351,7 +351,7 @@
     
     __weak typeof(self) weakSelf = self;
     [self.lottieView playWithCompletion:^(BOOL animationFinished) {
-        [weakSelf removeLottie];
+//        [weakSelf removeLottie];
     }];
     
     //循环播放
