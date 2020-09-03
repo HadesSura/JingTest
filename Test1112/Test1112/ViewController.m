@@ -356,6 +356,11 @@
     
     //循环播放
     [_lottieView setLoopAnimation:YES];
+<<<<<<< HEAD
+=======
+    
+//    一个小修改
+>>>>>>> test1
 
 }
 
