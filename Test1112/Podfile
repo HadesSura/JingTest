@@ -1,0 +1,15 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+target 'Test1112' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+pod "AFNetworking"
+pod "Masonry"
+pod "SDWebImage"
+pod 'ReactiveObjC', '3.1.0'
+pod 'lottie-ios', '~> 2.5.0'
+
+  # Pods for Test1112
+
+end
