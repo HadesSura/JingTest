@@ -30,15 +30,15 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    UIView *topView = [[UIView alloc]init];
-//    topView.backgroundColor = [UIColor redColor];
-//    [self.view addSubview:topView];
-//    [topView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.view).offset(50);
-//        make.left.equalTo(self.view).offset(10);
-//        make.right.equalTo(self.view).offset(-10);
-//        make.bottom.equalTo(self.view).offset(-50);
-//    }];
+    UIView *topView = [[UIView alloc]init];
+    topView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:topView];
+    [topView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).offset(50);
+        make.left.equalTo(self.view).offset(10);
+        make.right.equalTo(self.view).offset(-10);
+        make.bottom.equalTo(self.view).offset(-50);
+    }];
 //
 //    UIView *midView = [[UIView alloc]init];
 //    midView.backgroundColor = [UIColor blueColor];
