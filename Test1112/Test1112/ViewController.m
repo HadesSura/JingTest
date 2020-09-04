@@ -30,35 +30,35 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-//    UIView *topView = [[UIView alloc]init];
-//    topView.backgroundColor = [UIColor redColor];
-//    [self.view addSubview:topView];
-//    [topView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(self.view).offset(50);
-//        make.left.equalTo(self.view).offset(10);
-//        make.right.equalTo(self.view).offset(-10);
-//        make.bottom.equalTo(self.view).offset(-50);
-//    }];
-//
-//    UIView *midView = [[UIView alloc]init];
-//    midView.backgroundColor = [UIColor blueColor];
-//    [topView addSubview:midView];
-//    [midView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(topView).offset(50);
-//        make.leading.equalTo(topView).inset(50);
-//        make.width.equalTo(@100);
-//        make.height.equalTo(@(200));
-//    }];
-//
-//    UIView *boView = [[UIView alloc]init];
-//    boView.backgroundColor = [UIColor blackColor];
-//    [topView addSubview:boView];
-//    [boView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(midView).offset(50);
-//        make.leading.equalTo(midView.mas_right).offset(50);
-//        make.trailing.equalTo(topView).inset(40);
-//        make.height.equalTo(@(200));
-//    }];
+    UIView *topView = [[UIView alloc]init];
+    topView.backgroundColor = [UIColor redColor];
+    [self.view addSubview:topView];
+    [topView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view).offset(50);
+        make.left.equalTo(self.view).offset(10);
+        make.right.equalTo(self.view).offset(-10);
+        make.bottom.equalTo(self.view).offset(-50);
+    }];
+
+    UIView *midView = [[UIView alloc]init];
+    midView.backgroundColor = [UIColor blueColor];
+    [topView addSubview:midView];
+    [midView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(topView).offset(50);
+        make.leading.equalTo(topView).inset(50);
+        make.width.equalTo(@100);
+        make.height.equalTo(@(200));
+    }];
+
+    UIView *boView = [[UIView alloc]init];
+    boView.backgroundColor = [UIColor blackColor];
+    [topView addSubview:boView];
+    [boView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(midView).offset(50);
+        make.leading.equalTo(midView.mas_right).offset(50);
+        make.trailing.equalTo(topView).inset(40);
+        make.height.equalTo(@(200));
+    }];
     
 
 #pragma mark --- 关联对象
