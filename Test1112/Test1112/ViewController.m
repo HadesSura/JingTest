@@ -18,6 +18,34 @@
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <Lottie/Lottie.h>
 
+
+#pragma mark --- 枚举转字符串
+
+typedef NS_ENUM(NSInteger,NETWORK_TYPE){
+    NETWORK_TYPE_NONE = 0,
+    NETWORK_TYPE_WIFI,
+    NETWORK_TYPE_3G,
+    NETWORK_TYPE_2G,
+};
+
+const NSArray *___NetworkType;
+
+// 创建初始化函数。等于用宏创建一个getter函数
+
+#define NetworkTypeGet (___NetworkType == nil ? ___NetworkType = [[NSArray alloc] initWithObjects:\
+@"NONE",\
+@"WIFI",\
+@"3G",\
+@"2G", nil] : ___NetworkType)
+
+// 枚举 to 字串
+
+#define NetworkTypeString(type) ([NetworkTypeGet objectAtIndex:type])
+
+// 字串 to 枚举
+
+#define NetworkTypeEnum(string) ([NetworkTypeGet indexOfObject:string])
+
 @interface ViewController ()
 @property (nonatomic, strong) LOTAnimationView * lottieView;
 @end
@@ -30,35 +58,36 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UIView *topView = [[UIView alloc]init];
-    topView.backgroundColor = [UIColor redColor];
-    [self.view addSubview:topView];
-    [topView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view).offset(50);
-        make.left.equalTo(self.view).offset(10);
-        make.right.equalTo(self.view).offset(-10);
-        make.bottom.equalTo(self.view).offset(-50);
-    }];
-
-    UIView *midView = [[UIView alloc]init];
-    midView.backgroundColor = [UIColor blueColor];
-    [topView addSubview:midView];
-    [midView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(topView).offset(50);
-        make.leading.equalTo(topView).inset(50);
-        make.width.equalTo(@100);
-        make.height.equalTo(@(200));
-    }];
-
-    UIView *boView = [[UIView alloc]init];
-    boView.backgroundColor = [UIColor blackColor];
-    [topView addSubview:boView];
-    [boView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(midView).offset(50);
-        make.leading.equalTo(midView.mas_right).offset(50);
-        make.trailing.equalTo(topView).inset(40);
-        make.height.equalTo(@(200));
-    }];
+//    UIView *topView = [[UIView alloc]init];
+//    topView.backgroundColor = [UIColor redColor];
+//    [self.view addSubview:topView];
+//    [topView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(self.view).offset(50);
+//        make.left.equalTo(self.view).offset(10);
+//        make.right.equalTo(self.view).offset(-10);
+//        make.bottom.equalTo(self.view).offset(-50);
+//    }];
+//
+//    UIView *midView = [[UIView alloc]init];
+//    midView.backgroundColor = [UIColor blueColor];
+//    [topView addSubview:midView];
+//    [midView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(topView).offset(50);
+//        make.leading.equalTo(topView).inset(50);
+//        make.width.equalTo(@100);
+//        make.height.equalTo(@(200));
+//    }];
+//
+//    UIView *boView = [[UIView alloc]init];
+//    boView.backgroundColor = [UIColor blackColor];
+//    [topView addSubview:boView];
+//    [boView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.top.equalTo(midView).offset(50);
+//        make.leading.equalTo(midView.mas_right).offset(50);
+//        make.trailing.equalTo(topView).inset(40);
+//        make.height.equalTo(@(200));
+//    }];
+    
 
 #pragma mark --- 关联对象
 //    //要关联的对象的键值，一般设置成静态的，用于获取关联对象的值
@@ -348,16 +377,23 @@
 //    //4.连接
 //    [connection connect];
     
-    __weak typeof(self) weakSelf = self;
-    [self.lottieView playWithCompletion:^(BOOL animationFinished) {
+#pragma mark --- lottie
+//    __weak typeof(self) weakSelf = self;
+//    [self.lottieView playWithCompletion:^(BOOL animationFinished) {
 //        [weakSelf removeLottie];
-    }];
+//    }];
+//
+//    //循环播放
+//    [_lottieView setLoopAnimation:YES];
     
-    //循环播放
-    [_lottieView setLoopAnimation:YES];
-    
-//    一个小修改
+#pragma mark --- 枚举转字符串
+    // 枚举 to 字串
+    NSString *networkStr = NetworkTypeString(NETWORK_TYPE_3G);
+    NSLog(@"%@",networkStr);
 
+    // 字串 to 枚举
+    NETWORK_TYPE type = (NETWORK_TYPE)NetworkTypeEnum(@"3G");
+    NSLog(@"%ld",(long)type);
 }
 
 - (LOTAnimationView *)lottieView{
