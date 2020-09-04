@@ -59,7 +59,6 @@
         make.trailing.equalTo(topView).inset(40);
         make.height.equalTo(@(200));
     }];
-    
 
 #pragma mark --- 关联对象
 //    //要关联的对象的键值，一般设置成静态的，用于获取关联对象的值
