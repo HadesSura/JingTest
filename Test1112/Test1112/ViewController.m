@@ -17,6 +17,8 @@
 #import "TestAction+Test1.h"
 #import <ReactiveObjC/ReactiveObjC.h>
 #import <Lottie/Lottie.h>
+#import "Person.h"
+#import "Teacher.h"
 
 
 #pragma mark --- 枚举转字符串
@@ -394,6 +396,9 @@ const NSArray *___NetworkType;
     // 字串 to 枚举
     NETWORK_TYPE type = (NETWORK_TYPE)NetworkTypeEnum(@"3G");
     NSLog(@"%ld",(long)type);
+    
+//    Person *men = [[Teacher alloc]init];
+//    [men hit];
 }
 
 - (LOTAnimationView *)lottieView{

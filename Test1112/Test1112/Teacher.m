@@ -12,4 +12,8 @@
 +(void)load{
     NSLog(@"%s",__FUNCTION__);
 }
+
+- (void)hit{
+    NSLog(@"hit %s",__FUNCTION__);
+}
 @end

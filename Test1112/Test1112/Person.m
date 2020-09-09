@@ -12,4 +12,34 @@
 +(void)load{
     NSLog(@"%s",__FUNCTION__);
 }
+
+- (Person * (^)(NSString *))per_name{
+    return ^Person * (NSString * name){
+        self.name = name;
+        return self;
+    };
+}
+- (Person * (^)(int))per_tall{
+    return ^Person * (int tall){
+        self.tall = tall;
+        return self;
+    };
+}
+- (Person * (^)(int))per_age{
+    return ^Person * (int age){
+        self.age = age;
+        return self;
+    };
+}
+
+- (Person * (^)(void))run{
+    return ^Person * (void){
+        NSLog(@"我在跑步");
+        return self;
+    };
+}
+
+- (void)hit{
+    
+}
 @end

@@ -9,5 +9,7 @@
 #import "Student.h"
 
 @implementation Student
-
+- (void)hit{
+    NSLog(@"hit %s",__FUNCTION__);
+}
 @end

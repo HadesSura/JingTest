@@ -12,6 +12,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Person : NSObject
 
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, assign) NSInteger tall;
+@property (nonatomic, assign) NSInteger age;
+
+
+- (Person * (^)(NSString *))per_name;
+- (Person * (^)(int))per_tall;
+- (Person * (^)(int))per_age;
+- (Person * (^)(void))run;
+
+- (void)hit;
+
+
 @end
 
 NS_ASSUME_NONNULL_END
